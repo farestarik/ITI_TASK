@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>ITI TASK</title>
+
+    <style>
+        body {
+            margin: 70px 300px;
+            font-family: Andalus;
+            font-size: x-large;
+            font-weight: bold;
+            background-color: lightGrey;
+        }
+        
+        [type=text],
+        [type=button] {
+            font-family: 'Century Gothic';
+            font-size: large;
+        }
+        
+        table {
+            width: 600px;
+        }
+        
+        span {
+            color: red;
+            visibility: hidden;
+        }
+        
+        .SD {
+            background-color: lightpink;
+        }
+        
+        .OS {
+            background-color: lightyellow;
+        }
+        
+        .EL {
+            background-color: lightskyblue;
+        }
+        
+        .student_tr {
+            background-color: lightpink;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <form>
+        <table>
+            <tr>
+                <td colspan="2">
+                    Department:
+                    <input type="radio" id="name" name="Department" value="SD" checked="checked" />SD
+                    <input type="radio" name="Department" value="OS" />OS
+                    <input type="radio" name="Department" value="EL" />EL
+                </td>
+            </tr>
+            <tr>
+                <td>StudentName<input type="text" name="studentName" value="Eman" /></td>
+                <td><span id="nameError" style="visibility: hidden;">Required</span></td>
+            </tr>
+            <tr>
+                <td>StudentGrade<input type="text" name="studentGrade" value="50" /></td>
+                <td><span id="gardeError" style="visibility: hidden;">should be grade between 0:100</span></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" id="addBtn" value="Add" /></td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    sort:
+                    <select id="sort">
+                        <option value="all">All</option>
+                        <option value="name">Name</option>
+                        <option value="grade">Grade</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Filter:
+                    <select id="filter">
+                        <option value="all">All</option>
+                        <option value="success">Success</option>
+                        <option value="fail">Fail`</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div id="studentsTable"></div>
+
+
+    <script src="task.js"></script>
+
+</body>
+
+</html>
